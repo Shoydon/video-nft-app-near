@@ -17,6 +17,7 @@ const pinata = new PinataSDK({
   pinataGateway: "beige-sophisticated-baboon-74.mypinata.cloud",
 });
 
+console.log(pinata);
 
 
 export default function IndexPage() {

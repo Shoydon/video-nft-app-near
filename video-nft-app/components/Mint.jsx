@@ -108,7 +108,7 @@ const Mint = ({ uploadToPinata, mintNFT }) => {
             </div>
 
             <div className="w-100 mb-3" style={{ maxWidth: '400px' }}>
-                <label className="form-label">Price (in ETH):</label>
+                <label className="form-label">Price (in NEAR):</label>
                 <input
                     id="price"
                     value={price}
