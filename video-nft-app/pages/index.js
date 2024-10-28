@@ -84,14 +84,14 @@ export default function IndexPage() {
   const mintNFTs = async (uri, price) => {
     if (!signedAccountId) return;
     try {
-      const depositAmount = BigInt(price) * BigInt(1000000000000000000000000n);
-      console.log(depositAmount);
+      const scaledPrice = Math.round(price * 1e24);
+      const depositAmount = BigInt(scaledPrice).toString();
       const tx = await wallet.callMethod({
         contractId: CONTRACT,
         method: 'mint',
         args: {
           uri,
-          price: depositAmount.toString()
+          price: depositAmount
         },
       });
       toast.success("NFT minted successfully", {
